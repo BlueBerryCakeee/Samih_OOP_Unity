@@ -4,38 +4,54 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
-    private PlayerMovement playerMovement;
-    private Animator animator;
+    public static Player Instance { get; private set; }
+    public PlayerMovement playerMovement;
+    public Animator animator;
+    private Weapon currentWeapon;
 
-    private void Awake()
+    void Awake()
     {
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        
-        else 
-        { 
-            Instance = this; 
-        } 
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void Start()
+
+    void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        animator = GameObject.Find("EngineEffect").GetComponent<Animator>();
+        animator = transform.Find("Engine/EngineEffect").GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+
+    void Update()
     {
-        playerMovement.Move();
     }
 
-    private void LateUpdate()
+    void FixedUpdate()
     {
-        animator.SetBool("IsMoving", playerMovement.isMoving());
+        if (playerMovement != null)
+        {
+            playerMovement.Move();
+
+        }
     }
 
-    public Weapon Weapon { get; set; }
+
+
+    void LateUpdate()
+    {
+        if (animator != null && playerMovement != null)
+        {
+            bool isMoving = playerMovement.IsMoving();
+            // Debug.Log("IsMoving: " + isMoving);
+            animator.SetBool("IsMoving", isMoving);
+        }
+    }
 }
