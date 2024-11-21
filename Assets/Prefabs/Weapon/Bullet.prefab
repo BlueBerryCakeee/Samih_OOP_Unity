@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1867897826965731284}
   - component: {fileID: 2273001257357494025}
   - component: {fileID: 4540500948267381549}
-  - component: {fileID: 1015490622223308435}
+  - component: {fileID: 430800276412552575}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -171,7 +171,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1015490622223308435
+--- !u!114 &430800276412552575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,5 +183,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd708a827221e644d90e1231e59f3847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 30
   damage: 10

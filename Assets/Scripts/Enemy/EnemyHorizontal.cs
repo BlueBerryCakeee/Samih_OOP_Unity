@@ -12,11 +12,12 @@ public class EnemyHorizontal : Enemy
     private InvincibilityComponent invincibilityComponent; // Add Invincibility reference
     private AttackComponent attackComponent; // Add AttackComponent reference
 
+    public HealthComponent healthComponent;
+
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize SpriteRenderer
-        invincibilityComponent = GetComponent<InvincibilityComponent>(); // Initialize Invincibility
-        attackComponent = GetComponent<AttackComponent>(); // Initialize AttackComponent
+        healthComponent = GetComponent<HealthComponent>();
+
         Vector3 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         if (Random.value > 0.5f)
         {
@@ -39,6 +40,7 @@ public class EnemyHorizontal : Enemy
         // Check if the enemy is off the screen and reverse direction
         Vector3 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 
+
         if (transform.position.x > screenBounds.x)
         {
             direction = -direction;
@@ -47,6 +49,9 @@ public class EnemyHorizontal : Enemy
         {
             direction = -direction;
         }
+
+
+
     }
 
     // public void TakeDamage(int damage)
