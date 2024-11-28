@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-basis: 0; justify-content: flex-start; align-self: center; align-items: center;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; flex-basis: 20px; width: 890px; visibility: visible; position: absolute; height: 80px;">
+            <ui:Label tabindex="-1" text="Galady gaga&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 64px; background-color: rgba(255, 255, 255, 0); color: rgb(255, 255, 255); position: relative; top: 0; left: auto;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
